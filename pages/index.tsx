@@ -20,7 +20,7 @@ export default function Home() {
       alignItems="center"
     >
       <Flex gridArea="logo" flexDirection="column" alignItems="flex-start">
-        <img src="/rocketseat.svg" alt="Rocketseat" />
+        <img src="/logo.svg" alt="Nebula" />
 
         <Heading size="2xl" lineHeight="shorter" marginTop={16}>
           Faça seu login na plataforma

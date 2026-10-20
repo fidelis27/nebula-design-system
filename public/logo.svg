@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="48" viewBox="0 0 220 48" fill="none">
+  <rect width="48" height="48" rx="12" fill="#8257e5"/>
+  <path d="M16.5 34V14L31.5 34V14" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="62" y="31" font-family="Roboto, system-ui, sans-serif" font-size="22" font-weight="700" fill="#e1e1e6">Nebula</text>
+</svg>

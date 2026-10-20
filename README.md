@@ -1,57 +1,41 @@
-<br>
 <div align="center">
-  <img width="300" alt="NextJS-ChakraUI" src="./.github/assets/Nextjs-ChakraUI.png" />
-
-  <h4 align="center">
-     Next.js, declarative UI and design systems applied to ReactJS. Access the tutorial <a href="https://www.youtube.com/watch?v=6TEo2AxW-oQ">here</a>
-  </h4>
+  <h1>Nebula Design System</h1>
+  <p>Design system em Next.js e Chakra UI: tema customizado, componentes reutilizáveis e uma tela de login de exemplo.</p>
 </div>
 
----
-
 <p align="center">
-  <img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/eugustavo/youtube-nextjs-design-system" />
-  <img alt="Github License" src="https://img.shields.io/github/license/eugustavo/youtube-nextjs-design-system" />
+  <img alt="Tela de login" src="./.github/assets/login.png" width="720">
 </p>
 
-<p align="center">
-  <img alt="Rocketseat" src="./.github/assets/login-rocketseat.png">
-</p>
+## O que tem aqui
 
+- **Tema** (`styles/theme.ts`): fonte Roboto, raios de borda e paleta escura com roxo `#8257e5`, definidos como tokens do Chakra.
+- **Componentes** (`components/`): `Input` e `Divider`, wrappers do Chakra com o estilo do design system já aplicado.
+- **Página de login** (`pages/index.tsx`): exemplo de uso do tema e dos componentes.
+- **Dark mode fixo** via `next-themes`.
 
-## 🚀 Getting started
+## Stack
 
-To clone and run the application, you will need to have [Git](https://git-scm.com), [Node.js](https://nodejs.org) 20+ + [Yarn](https://yarnpkg.com) installed on your machine. With all programs installed, run the following command lines:
+Next.js 16 (Pages Router), React 19, TypeScript 7 e Chakra UI 3.
 
+## Rodando
+
+Requer [Node.js](https://nodejs.org) 20+ e [Yarn](https://yarnpkg.com).
 
 ```bash
-# Clone this repository
-$ git clone https://github.com/rocketseat-content/youtube-nextjs-design-system
-
-# Access the repository
-$ cd youtube-nextjs-design-system
-
-# Install the dependencies
-$ yarn install
-
-# Run application
-$ yarn dev
+git clone https://github.com/fidelis27/nebula-design-system
+cd nebula-design-system
+yarn install
+yarn dev        # http://localhost:3000
 ```
 
-## ⬆️ Stack atualizada
+Build de produção: `yarn build && yarn start`.
 
-Este fork foi migrado das versões da época do vídeo (2020) para versões atuais:
+## Notas da migração para o Chakra v3
 
-| | Antes | Agora |
-|---|---|---|
-| Next.js | 9.5 | 16 (Pages Router, Turbopack) |
-| React | 16 | 19 |
-| TypeScript | 3.9 | 7 |
-| Chakra UI | `@chakra-ui/core` 0.8 | `@chakra-ui/react` 3 |
-| Tema / dark mode | `ThemeProvider` + `ColorModeProvider` | `createSystem` + `next-themes` |
+O projeto nasceu em 2020 (Next 9, Chakra 0.8) a partir de um [tutorial em vídeo](https://www.youtube.com/watch?v=6TEo2AxW-oQ) e foi atualizado. O que mudou:
 
-Principais mudanças na migração do Chakra:
 - `theme.ts` agora usa `createSystem(defaultConfig, defineConfig({ theme: { tokens } }))`, com valores no formato `{ value: '...' }`.
 - `Divider` virou `Separator`; `flexDir` virou `flexDirection`; `focusBorderColor` virou a variável CSS `--focus-color`.
 - Botões precisam de `color="white"` explícito, porque o Chakra v3 não calcula mais o contraste do texto sozinho.
-- `emotion-theming` e `@emotion/styled` foram removidos (o `config/emotion.ts` não era usado).
+- `emotion-theming` e `@emotion/styled` foram removidos.
