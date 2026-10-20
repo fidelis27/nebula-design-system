@@ -1,6 +1,6 @@
 // import Head from 'next/head'
 
-import { Heading, Grid, Flex, Link, Button, Text } from '@chakra-ui/core'
+import { Heading, Grid, Flex, Link, Button, Text } from '@chakra-ui/react'
 import Divider from '../components/Divider'
 import Input from '../components/Input'
 
@@ -19,7 +19,7 @@ export default function Home() {
       justifyContent="center"
       alignItems="center"
     >
-      <Flex gridArea="logo" flexDir="column" alignItems="flex-start">
+      <Flex gridArea="logo" flexDirection="column" alignItems="flex-start">
         <img src="/rocketseat.svg" alt="Rocketseat" />
 
         <Heading size="2xl" lineHeight="shorter" marginTop={16}>
@@ -32,7 +32,7 @@ export default function Home() {
         height="100%"
         backgroundColor="gray.700"
         borderRadius="md"
-        flexDir="column"
+        flexDirection="column"
         alignItems="stretch"
         padding={16}
       >
@@ -57,6 +57,7 @@ export default function Home() {
         </Link>
 
         <Button
+          color="white"
           backgroundColor="purple.500"
           height="50px"
           borderRadius="sm"
@@ -87,6 +88,7 @@ export default function Home() {
         <Flex alignItems="center">
           <Text fontSize="sm">Ou entre com</Text>
           <Button
+            color="white"
             height="50px"
             flex="1"
             backgroundColor="gray.600"

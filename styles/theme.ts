@@ -1,37 +1,43 @@
-import { theme, DefaultTheme } from '@chakra-ui/core'
+import { createSystem, defaultConfig, defineConfig } from '@chakra-ui/react'
 
-const customTheme: DefaultTheme = {
-  ...theme,
-  fonts: {
-    body: 'Roboto, system-ui, sans-serif',
-    heading: 'Roboto, system-ui, sans-serif',
-    mono: 'Menlo, monospace'
-  },
-  fontWeights: {
-    ...theme.fontWeights,
-    normal: 400,
-    medium: 600,
-    bold: 700,
-  },
-  radii: {
-    ...theme.radii,
-    sm: '5px',
-    md: '8px',
-  },
-  colors: {
-    ...theme.colors,
-    purple: {
-      ...theme.colors.purple,
-      500: '#8257e5',
-    },
-    gray: {
-      ...theme.colors.gray,
-      300: '#e1e1e6',
-      600: '#29292e',
-      700: '#202024',
-      800: '#121214'
+const config = defineConfig({
+  globalCss: {
+    body: {
+      bg: 'gray.800',
+      color: 'white',
     },
   },
-}
+  theme: {
+    tokens: {
+      fonts: {
+        body: { value: 'Roboto, system-ui, sans-serif' },
+        heading: { value: 'Roboto, system-ui, sans-serif' },
+        mono: { value: 'Menlo, monospace' },
+      },
+      fontWeights: {
+        normal: { value: '400' },
+        medium: { value: '600' },
+        bold: { value: '700' },
+      },
+      radii: {
+        sm: { value: '5px' },
+        md: { value: '8px' },
+      },
+      colors: {
+        purple: {
+          500: { value: '#8257e5' },
+        },
+        gray: {
+          300: { value: '#e1e1e6' },
+          600: { value: '#29292e' },
+          700: { value: '#202024' },
+          800: { value: '#121214' },
+        },
+      },
+    },
+  },
+})
 
-export default customTheme;
+const system = createSystem(defaultConfig, config)
+
+export default system

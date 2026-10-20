@@ -1,6 +1,8 @@
-import ThemeContainer from "../contexts/theme/ThemeContainer"
+import type { AppProps } from 'next/app'
 
-function MyApp({ Component, pageProps }) {
+import ThemeContainer from '../contexts/theme/ThemeContainer'
+
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeContainer>
       <Component {...pageProps} />

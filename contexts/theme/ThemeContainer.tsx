@@ -1,26 +1,18 @@
-import React from 'react';
+import React from 'react'
 
-import { 
-  ThemeProvider as ChakraThemeProvider, 
-  ColorModeProvider,
-  CSSReset
-} from '@chakra-ui/core';
+import { ChakraProvider } from '@chakra-ui/react'
+import { ThemeProvider } from 'next-themes'
 
-import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming'
+import system from '../../styles/theme'
 
-import theme from '../../styles/theme';
-
-const ThemeContainer: React.FC = ({ children }) => {
+const ThemeContainer: React.FC<React.PropsWithChildren> = ({ children }) => {
   return (
-    <ChakraThemeProvider theme={theme}>
-      <ColorModeProvider value="dark">
-        <EmotionThemeProvider theme={theme}>
-          <CSSReset />
-          {children}
-        </EmotionThemeProvider>
-      </ColorModeProvider>
-    </ChakraThemeProvider>
-  );
+    <ChakraProvider value={system}>
+      <ThemeProvider attribute="class" forcedTheme="dark" disableTransitionOnChange>
+        {children}
+      </ThemeProvider>
+    </ChakraProvider>
+  )
 }
 
-export default ThemeContainer;
+export default ThemeContainer
